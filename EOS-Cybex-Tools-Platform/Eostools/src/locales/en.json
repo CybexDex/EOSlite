@@ -1,0 +1,153 @@
+{
+    "title": {
+      "vote": "Vote",
+      "delegate": "Delegate",
+      "delegatebw": "Delegate",
+      "unDelegatebw": "Undelegate",
+      "transfer": "Transfer",
+      "transferRam": "Buy/Sell RAM",
+      "buyRam": "Buy RAM (EOS)",
+      "buyRamBytes": "Buy RAM (Bytes)",
+      "sellRam": "Sell RAM"
+    },
+    "button": {
+      "add": "add"
+    },
+    "message": {
+      "copied": "Copied to clipoard!"
+    },
+    "label": {
+      "generate": "generate transaction",
+      "notification": "Please stay offline for the security of your private key",
+      "switchkey": "Switch to show private key",
+      "transfer": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "fromAccountName": "From:",
+        "toAccountName": "To:",
+        "transferQuantity": "Quantity:",
+        "transferMemo": "Memo:"
+      },
+      "delegatebw": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "fromAccountName": "From:",
+        "receiverAccountName": "Receiver:",
+        "netQuantity": "NET Quantity:",
+        "cpuQuantity": "CPU Quantity:"
+      },
+      "unDelegatebw": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "fromAccountName": "Undelegate to:",
+        "receiverAccountName": "Undelegate from:",
+        "netQuantity": "NET Quantity:",
+        "cpuQuantity": "CPU Quantity:"
+      },
+      "vote": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "voterAccountName": "Voter:",
+        "producers": "Producers:"
+      },
+      "sellRam": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "accountName": "Account:",
+        "bytes": "Bytes:"
+      },
+      "buyRam": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "payerAccountName": "Payer:",
+        "receiverAccountName": "Receiver:",
+        "quantity": "Quantity:"
+      },
+      "buyRamBytes": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "payerAccountName": "Payer:",
+        "receiverAccountName": "Receiver:",
+        "bytes": "Bytes:"
+      }
+    },
+    "placeholder": {
+      "transfer": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account sending EOS",
+        "fromAccountName": "The account sending EOS",
+        "toAccountName": "The account receiving EOS",
+        "transferQuantity": "The amount of EOS to send",
+        "transferMemo": "The memo for the transfer"
+      },
+      "delegatebw": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account to delegate bandwidth from",
+        "fromAccountName": "The account to delegate bandwidth from",
+        "receiverAccountName": "The account to receive the delegated bandwidth",
+        "netQuantity": "The amount of EOS to stake for network bandwidth",
+        "cpuQuantity": "The amount of EOS to stake for CPU bandwidth"
+      },
+      "unDelegatebw": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account undelegating bandwidth",
+        "fromAccountName": "The account to undelegate bandwidth from",
+        "receiverAccountName": "The account undelegating bandwidth",
+        "netQuantity": "The amount of EOS to undelegate for network bandwidth",
+        "cpuQuantity": "The amount of EOS to undelegate for CPU bandwidth"
+      },
+      "vote": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account to vote",
+        "voterAccountName": "The account to vote",
+        "producers": "Vote for one or more producers, split by space key",
+        "producer": "Vote for one producer"
+      },
+      "sellRam": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account to sell RAM",
+        "accountName": "The account to receive EOS for sold RAM",
+        "bytes": "Amount of RAM bytes to sell"
+      },
+      "buyRam": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account paying for RAM",
+        "payerAccountName": "The account paying for RAM",
+        "receiverAccountName": "The account receiving RAM",
+        "quantity": "The amount of EOS to pay for RAM (includes the fee to pay EOS system account eosio.ramfee)"
+      },
+      "buyRamBytes": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account paying for RAM",
+        "payerAccountName": "The account paying for RAM",
+        "receiverAccountName": "The account receiving RAM",
+        "bytes": "Amount of RAM bytes to buy"
+      }
+    },
+    "error": {
+      "jsonInfoRequired": "Transaction Header required",
+      "wrongFormat": "Wrong format",
+      "splitBySpace": "Producers should be spilt by space",
+      "keyProviderRequired": "Private key required",
+      "fromAccountNameRequired": "From required",
+      "toAccountNameRequired": "To required",
+      "payerAccountNameRequired": "Payer Required",
+      "receiverAccountNameRequired": "Receiver Required",
+      "transferQuantityRequired": "Quantity required",
+      "voterAccountNameRequired": "Voter required",
+      "bytesRequired": "Bytes required",
+      "quantityRequired": "Quantity required",
+      "delegateQuantityRequired": "Quantity required",
+      "transferQuantityMustBeNumber": "Quantity must be number",
+      "delegateQuantityMustBeNumber": "Quantity must be number",
+      "bytesMustBeNumber": "Bytes must be number",
+      "quantityMustBeNumber": "Quantity must be number",
+      "precisionTooSmall": "The precision of quantity must be greater or equal to 0.0001",
+      "keyProviderInvalid": "The format of given private key is invalid",
+      "accountNameRequired": "Account required",
+      "payAccountNameRequired": "From required",
+      "paidAccountNameRequired": "Undelegate to required",
+      "undelegatedFromRequired": "Undelegate from required",
+      "producersRequired": "Producers required"
+    }
+  }

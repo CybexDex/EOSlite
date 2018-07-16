@@ -1,0 +1,153 @@
+{
+  "title": {
+    "vote": "投票",
+    "delegate": "抵押",
+    "delegatebw": "抵押",
+    "unDelegatebw": "解抵押",
+    "transfer": "转账",
+    "transferRam": "RAM交易",
+    "buyRam": "购买RAM (EOS)",
+    "buyRamBytes": "购买RAM (字节)",
+    "sellRam": "出售RAM"
+  },
+  "button": {
+    "add": "添加"
+  },
+  "message": {
+    "copied": "已复制到剪贴板"
+  },
+  "label": {
+    "generate": "生成交易",
+    "notification": "为保证您的私钥安全，请在离线状态下进行操作",
+    "switchkey": "切换显示明文",
+    "transfer": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "转出账户私钥：",
+      "fromAccountName": "转出账户：",
+      "toAccountName": "转入账户：",
+      "transferQuantity": "金额：",
+      "transferMemo": "备注："
+    },
+    "delegatebw": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "付款账户私钥：",
+      "fromAccountName": "付款账户：",
+      "receiverAccountName": "接收账户：",
+      "netQuantity": "NET金额：",
+      "cpuQuantity": "CPU金额："
+    },
+    "unDelegatebw": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "收款账户私钥：",
+      "fromAccountName": "收款账户：",
+      "receiverAccountName": "解抵押账户：",
+      "netQuantity": "NET金额：",
+      "cpuQuantity": "CPU金额："
+    },
+    "vote": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "投票账户私钥：",
+      "voterAccountName": "投票账户：",
+      "producers": "投票节点："
+    },
+    "sellRam": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "账户私钥：",
+      "accountName": "账户名：",
+      "bytes": "字节数："
+    },
+    "buyRam": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "付款账户私钥：",
+      "payerAccountName": "付款账户：",
+      "receiverAccountName": "接收账户：",
+      "quantity": "金额："
+    },
+    "buyRamBytes": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "付款账户私钥：",
+      "payerAccountName": "付款账户：",
+      "receiverAccountName": "接收账户：",
+      "bytes": "字节数："
+    }
+  },
+  "placeholder": {
+    "transfer": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入转出账户私钥",
+      "fromAccountName": "请输入转出EOS的账户名",
+      "toAccountName": "请输入转入EOS的账户名",
+      "transferQuantity": "请输入转账的EOS数量",
+      "transferMemo": "请输入转账交易的备注"
+    },
+    "delegatebw": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入为抵押带宽付款的账户私钥",
+      "fromAccountName": "请输入为抵押带宽付款的账户名",
+      "receiverAccountName": "请输入接收被抵押带宽的账户名",
+      "netQuantity": "请输入为换取网络带宽而抵押的EOS数量",
+      "cpuQuantity": "请输入为换取CPU带宽而抵押的EOS数量"
+    },
+    "unDelegatebw": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入接收解抵押带宽所得EOS的账户私钥",
+      "fromAccountName": "请输入解抵押带宽的账户名",
+      "receiverAccountName": "请输入接收解抵押带宽所得EOS的账户名",
+      "netQuantity": "请输入解抵押网络带宽的EOS数量",
+      "cpuQuantity": "请输入解抵押CPU带宽的EOS数量"
+    },
+    "vote": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入参与投票的账户私钥",
+      "voterAccountName": "请输入参与投票的账户名",
+      "producers": "请输入或者粘贴被投票的节点名，用空格分割",
+      "producer": "请输入被投票的一个节点名"
+    },
+    "sellRam": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入出售RAM的账户私钥",
+      "accountName": "请输入出售RAM的账户名",
+      "bytes": "请输入出售的RAM字节数"
+    },
+    "buyRam": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入付款的账户私钥",
+      "payerAccountName": "请输入付款的账户名",
+      "receiverAccountName": "请输入接收RAM的账户名",
+      "quantity": "请输入购买RAM的EOS数量（购买RAM需向EOS系统账户eosio.ramfee支付一定量手续费）"
+    },
+    "buyRamBytes": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入付款的账户私钥",
+      "payerAccountName": "请输入付款的账户名",
+      "receiverAccountName": "请输入接收RAM的账户名",
+      "bytes": "请输入购买的RAM字节数"
+    }
+  },
+  "error": {
+    "jsonInfoRequired": "请输入交易报头",
+    "wrongFormat": "报头格式错误",
+    "splitBySpace": "投票节点用空格分割",
+    "keyProviderRequired": "请输入私钥",
+    "fromAccountNameRequired": "请输入转出账户",
+    "toAccountNameRequired": "请输入转入账户",
+    "payerAccountNameRequired": "请输入付款账户",
+    "receiverAccountNameRequired": "请输入接收账户",
+    "transferQuantityRequired": "请输入金额",
+    "voterAccountNameRequired": "请输入投票账户",
+    "bytesRequired": "请输入字节数",
+    "quantityRequired": "请输入金额",
+    "delegateQuantityRequired": "请输入抵押金额",
+    "transferQuantityMustBeNumber": "金额必须为数字",
+    "delegateQuantityMustBeNumber": "抵押金额必须为数字",
+    "bytesMustBeNumber": "字节数必须为数字",
+    "quantityMustBeNumber": "金额必须为数字",
+    "precisionTooSmall": "金额最小精度为0.0001",
+    "keyProviderInvalid": "非法的私钥格式，请检查输入",
+    "accountNameRequired": "请输入账户名",
+    "payAccountNameRequired": "请输入付款账户",
+    "paidAccountNameRequired": "请输入收款账户",
+    "undelegatedFromRequired": "请输入解抵押账户",
+    "producersRequired": "请输入投票节点"
+  }
+}
