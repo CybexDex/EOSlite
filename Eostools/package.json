@@ -1,6 +1,6 @@
 {
   "name": "EOSlite",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "author": "吴哲夫 <zhefu.wu@nbltrust.com>",
   "description": "An electron-vue project",
   "license": null,
@@ -20,7 +20,7 @@
   },
   "build": {
     "productName": "EOSlite",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "com.nbltrust.eoslite",
     "directories": {
       "output": "build"
     },
@@ -62,7 +62,7 @@
     "qrcode": "^1.2.0",
     "bignumber.js": "^5.0.0",
     "clipboard-polyfill": "^2.4.1",
-    "eosjs": "^15.0.3",
+    "eosjs": "^15.0.6",
     "vue-i18n": "^7.4.0"
   },
   "devDependencies": {

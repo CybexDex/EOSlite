@@ -8,7 +8,14 @@
       "transferRam": "Buy/Sell RAM",
       "buyRam": "Buy RAM (EOS)",
       "buyRamBytes": "Buy RAM (Bytes)",
-      "sellRam": "Sell RAM"
+      "sellRam": "Sell RAM",
+      "newAccount": "Create account",
+      "refund": "Refund",
+      "proxy": "Proxy",
+      "updateOwnerKey": "Update Owner Key",
+      "updateActiveKey": "Update Active Key",
+      "updatePermission": "Update Authority",
+      "keygen": "Keygen"
     },
     "button": {
       "add": "add"
@@ -69,6 +76,45 @@
         "payerAccountName": "Payer:",
         "receiverAccountName": "Receiver:",
         "bytes": "Bytes:"
+      },
+      "newAccount": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "creatorName": "Creator Name:" ,
+        "newAccountName": "New Account Name:",
+        "newOwnerKey": "Owner Key:",
+        "newActiveKey": "Active Key:",
+        "netQuantity": "NET Quantity:",
+        "cpuQuantity": "CPU Quantity:",
+        "bytes": "Bytes:"
+      },
+      "refund": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "accountName": "Name:"
+      },
+      "proxy": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Private Key:",
+        "voterAccountName": "Voter:",
+        "proxyAccountName": "Proxy:"
+      },
+      "updateActiveKey": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Original Private Key:",
+        "accountName": "Name:",
+        "newPublicKey": "New Public Key:"
+      },
+      "updateOwnerKey": {
+        "jsonInfo": "Transaction Header:",
+        "keyProvider": "Original Private Key:",
+        "accountName": "Name:",
+        "newPublicKey": "New Public Key:"
+      },
+      "keygenbtn": "generate keys",
+      "keygen": {
+        "privateKey": "Private Key:",
+        "publicKey": "Public Key:"
       }
     },
     "placeholder": {
@@ -122,6 +168,40 @@
         "payerAccountName": "The account paying for RAM",
         "receiverAccountName": "The account receiving RAM",
         "bytes": "Amount of RAM bytes to buy"
+      },
+      "newAccount": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account creating the new account",
+        "creatorName": "The name of the account creating the new account" ,
+        "newAccountName": "The name of the new account",
+        "newOwnerKey": "The owner public key for the new account",
+        "newActiveKey": "The active public key for the new account",
+        "netQuantity": "The amount of EOS delegated for network bandwidth",
+        "cpuQuantity": "The amount of EOS delegated for CPU bandwidth",
+        "bytes": "The amount of RAM bytes to purchase for the new account"
+      },
+      "refund": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account to refund",
+        "accountName": "The name of the account to refund"
+      },
+      "proxy": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The private key of the account to vote",
+        "voterAccountName": "The account to vote",
+        "proxyAccountName": "The account to proxy"
+      },
+      "updateActiveKey": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The original active private key of the account",
+        "accountName": "The account to update active key",
+        "newPublicKey": "The new active public key of the account"
+      },
+      "updateOwnerKey": {
+        "jsonInfo": "Transaction Header copied from https://tools-eos.cybex.io",
+        "keyProvider": "The original owner private key of the account",
+        "accountName": "The account to update owner key",
+        "newPublicKey": "The new owner public key of the account"
       }
     },
     "error": {
@@ -148,6 +228,16 @@
       "payAccountNameRequired": "From required",
       "paidAccountNameRequired": "Undelegate to required",
       "undelegatedFromRequired": "Undelegate from required",
-      "producersRequired": "Producers required"
+      "producersRequired": "Producers required",
+      "creatorName": "Creator name required" ,
+      "newAccountName": "New account name required",
+      "newOwnerKey": "Owner key required",
+      "newActiveKey": "Active key required",
+      "proxyAccountName": "Proxy account required",
+      "newPublicKey": "New public key required",
+      "netQuantityRequired": "Quantity required",
+      "cpuQuantityRequired": "Quantity required",
+      "netQuantityMustBeNumber": "Quantity must be number",
+      "cpuQuantityMustBeNumber": "Quantity must be number"
     }
   }

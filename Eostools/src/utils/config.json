@@ -3,7 +3,7 @@
     "Eosio": {
       "TestNet": {
         "httpEndpoint": "http://139.196.73.117:9000",
-        "chainId": "00d48a14e7f551db85db479381694c117d33690ae0c66af48b776971c9d565aa"
+        "chainId": "038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca"
       },
       "MainNet": {
         "httpEndpoint": "http://139.196.73.117:8888",

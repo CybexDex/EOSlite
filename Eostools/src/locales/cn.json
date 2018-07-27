@@ -8,7 +8,14 @@
     "transferRam": "RAM交易",
     "buyRam": "购买RAM (EOS)",
     "buyRamBytes": "购买RAM (字节)",
-    "sellRam": "出售RAM"
+    "sellRam": "出售RAM",
+    "newAccount": "新账户",
+    "refund": "赎回",
+    "proxy": "代理",
+    "updateOwnerKey": "更新Owner公钥",
+    "updateActiveKey": "更新Active公钥",
+    "updatePermission": "更新权限",
+    "keygen": "秘钥生成"
   },
   "button": {
     "add": "添加"
@@ -69,6 +76,45 @@
       "payerAccountName": "付款账户：",
       "receiverAccountName": "接收账户：",
       "bytes": "字节数："
+    },
+    "newAccount": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "私钥：",
+      "creatorName": "账户名：" ,
+      "newAccountName": "新账户名：",
+      "newOwnerKey": "Owner公钥：",
+      "newActiveKey": "Active公钥：",
+      "netQuantity": "NET金额：",
+      "cpuQuantity": "CPU金额：",
+      "bytes": "字节数："
+    },
+    "refund": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "私钥：",
+      "accountName": "账户名："
+    },
+    "proxy": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "私钥：",
+      "voterAccountName": "投票账户：",
+      "proxyAccountName": "代理账户："
+    },
+    "updateActiveKey": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "私钥：",
+      "accountName": "账户名：",
+      "newPublicKey": "新的公钥："
+    },
+    "updateOwnerKey": {
+      "jsonInfo": "交易报头：",
+      "keyProvider": "私钥：",
+      "accountName": "账户名：",
+      "newPublicKey": "新的公钥："
+    },
+    "keygenbtn": "生成秘钥",
+    "keygen": {
+      "privateKey": "私钥：",
+      "publicKey": "公钥："
     }
   },
   "placeholder": {
@@ -122,6 +168,40 @@
       "payerAccountName": "请输入付款的账户名",
       "receiverAccountName": "请输入接收RAM的账户名",
       "bytes": "请输入购买的RAM字节数"
+    },
+    "newAccount": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入创建者的私钥",
+      "creatorName": "请输入创建者的账户名" ,
+      "newAccountName": "请输入新账户的账户名",
+      "newOwnerKey": "请输入新账户Owner的公钥",
+      "newActiveKey": "请输入新账户Active的公钥",
+      "netQuantity": "请输入为新账户换取网络带宽而抵押的EOS数量",
+      "cpuQuantity": "请输入为新账户换取CPU带宽而抵押的EOS数量",
+      "bytes": "请输入为新账户购买RAM的EOS数量"
+    },
+    "refund": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入赎回的账户私钥",
+      "accountName": "请输入赎回的账户名"
+    },
+    "proxy": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入参与投票的账户私钥",
+      "voterAccountName": "请输入参与投票的账户名",
+      "proxyAccountName": "请输入代理投票的账户名"
+    },
+    "updateActiveKey": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入账户原有的Active私钥",
+      "accountName": "请输入更新Active公钥的账户名",
+      "newPublicKey": "请输入账户新的Active公钥"
+    },
+    "updateOwnerKey": {
+      "jsonInfo": "请输入联网获取的交易报头",
+      "keyProvider": "请输入账户原有的Owner私钥",
+      "accountName": "请输入更新Owner公钥的账户名",
+      "newPublicKey": "请输入账户新的Owner公钥"
     }
   },
   "error": {
@@ -148,6 +228,16 @@
     "payAccountNameRequired": "请输入付款账户",
     "paidAccountNameRequired": "请输入收款账户",
     "undelegatedFromRequired": "请输入解抵押账户",
-    "producersRequired": "请输入投票节点"
+    "producersRequired": "请输入投票节点",
+    "creatorName": "请输入创建者的账户名" ,
+    "newAccountName": "请输入新账户的账户名",
+    "newOwnerKey": "请输入新账户Owner的公钥",
+    "newActiveKey": "请输入新账户Active的公钥",
+    "proxyAccountName": "请输入代理投票的账户名",
+    "newPublicKey": "请输入新的公钥",
+    "netQuantityRequired": "请输入金额",
+    "cpuQuantityRequired": "请输入金额",
+    "netQuantityMustBeNumber": "金额必须为数字",
+    "cpuQuantityMustBeNumber": "金额必须为数字"
   }
 }

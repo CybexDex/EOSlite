@@ -19,11 +19,76 @@
     </el-row>
     <el-tabs v-model="currMode" style="width:100%;margin-left: 5px;" @tab-click="onModeSelected">
       <el-tab-pane label="" disabled></el-tab-pane>
+      <el-tab-pane :label="$t('title.newAccount')" name="newAccount"></el-tab-pane>
       <el-tab-pane :label="$t('title.transfer')" name="transfer"></el-tab-pane>
+      <!-- <el-tab-pane :label="$t('title.updateOwnerKey')" name="updateOwnerKey"></el-tab-pane>
+      <el-tab-pane :label="$t('title.updateActiveKey')" name="updateActiveKey"></el-tab-pane> -->
+      <el-tab-pane :label="$t('title.updatePermission')" name="updatePermission"></el-tab-pane>
+      <el-tab-pane :label="$t('title.refund')" name="refund"></el-tab-pane>
+      <!-- <el-tab-pane :label="$t('title.proxy')" name="proxy"></el-tab-pane> -->
       <el-tab-pane :label="$t('title.delegate')" name="delegate"></el-tab-pane>
       <el-tab-pane :label="$t('title.vote')" name="vote"></el-tab-pane>
       <el-tab-pane :label="$t('title.transferRam')" name="transferRam"></el-tab-pane>
+      <el-tab-pane :label="$t('title.keygen')" name="keygen"></el-tab-pane>
     </el-tabs>
+    <el-row v-for="(tmodule, tname, index) in  allModules" :key="index" v-if="currMode === tname">
+      <el-col :span="22" :offset="1">
+        <div v-if="tmodule.hasTab" style="text-align:center;margin-bottom:20px;">
+          <el-radio-group v-model="tmodule.vmodel" @change="onModeSelected">
+            <el-radio-button v-for="(submodule, subname, idx) in tmodule.tabs" :key="index + idx" :label="subname">{{$t('title.' + subname)}}</el-radio-button>
+          </el-radio-group>
+        </div>
+        <div v-if="tmodule.hasTab">
+          <el-form v-for="(submodule, subname, idx) in tmodule.tabs" v-if="subname === tmodule.vmodel" :key="index + idx" ref="form" :model="dlgData" :rules="dlgRules" :label-width="'150px'" @keyup.native="onEnterClicked">
+            <div v-for="(val, attr, idx) in submodule" :key="index+idx">
+              <el-form-item v-if="attr === 'producers'" :label="$t('label.vote.producers')" prop="producers">
+                <el-row>
+                  <el-col :span="14">
+                    <el-input v-model="dlgData.producerNames" rows="5" type="textarea" :placeholder="$t('placeholder.vote.producers')" clearable></el-input>
+                  </el-col>
+                  <el-col :span="9" :offset="1">
+                    <el-input style="margin-top:-2px;" v-model="dlgData.singleProducerName" :placeholder="$t('placeholder.vote.producer')" clearable>
+                      <el-button @click="onAddProducer" slot="append">{{$t('button.add')}}</el-button>
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-form-item>
+              <el-form-item v-else :type="val.isPrivateKey ? 'keyInputType' : ''" :label="$t(`label.${subname}.${attr}`)" :prop="attr">
+                <el-input v-model="dlgData[attr]" :placeholder="$t(`placeholder.${subname}.${attr}`)" clearable>
+                  <el-button v-if="val.isPrivateKey" @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
+                </el-input>
+              </el-form-item>
+            </div>
+            <div style="text-align:center;"><el-button @click="generate">{{$t('label.generate')}}</el-button></div>
+          </el-form>
+        </div>
+        <el-form v-else ref="form" :model="dlgData" :rules="dlgRules" :label-width="'150px'" @keyup.native="onEnterClicked">
+          <el-form-item v-for="(val, attr, idx) in tmodule" :key="index+idx" :type="val.isPrivateKey ? 'keyInputType' : ''" :label="$t(`label.${tname}.${attr}`)" :prop="attr">
+            <el-input v-model="dlgData[attr]" :placeholder="$t(`placeholder.${tname}.${attr}`)" clearable>
+              <el-button v-if="val.isPrivateKey" @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
+            </el-input>
+          </el-form-item>
+          <div style="text-align:center;"><el-button @click="generate">{{$t('label.generate')}}</el-button></div>
+        </el-form>
+      </el-col>
+    </el-row>
+    <el-row v-if="currMode === 'keygen'">
+      <el-col :span="20" :offset="2">
+        <el-form ref="form" :model="dlgData" :rules="dlgRules" :label-width="'100px'" @keyup.native="onEnterClicked">
+          <el-form-item v-if="dlgData.privateKey && dlgData.privateKey.length > 0" :label="$t('label.keygen.privateKey')">
+            <el-input v-model="dlgData.privateKey" :type="keyInputType" clearable>
+              <el-button @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
+            </el-input>
+          </el-form-item>
+          <el-form-item v-if="dlgData.publicKey && dlgData.publicKey.length > 0" :label="$t('label.keygen.publicKey')">
+            <el-input v-model="dlgData.publicKey" clearable>
+              <!-- <el-button slot="append" @click="copyKey" icon="el-icon-document"></el-button> -->
+            </el-input>
+          </el-form-item>
+          <div style="text-align:center;"><el-button @click="generate">{{$t('label.keygenbtn')}}</el-button></div>
+        </el-form>
+      </el-col>
+    </el-row>
     <el-row v-if="currMode === 'transfer'">
       <el-col :span="22" :offset="1">
         <el-form ref="form" :model="dlgData" :rules="dlgRules" :label-width="'150px'" @keyup.native="onEnterClicked">
@@ -113,12 +178,11 @@
         </el-form>
       </el-col>
     </el-row>
-    <el-row v-if="currMode === 'vote'">
+    <!-- <el-row v-if="currMode === 'vote'">
       <el-col :span="22" :offset="1">
         <el-form ref="form" :model="dlgData" :rules="dlgRules" :label-width="'150px'" @keyup.native="onEnterClicked">
           <el-form-item :label="$t('label.vote.jsonInfo')" prop="jsonInfo">
             <el-input v-model="dlgData.jsonInfo" :placeholder="$t('placeholder.vote.jsonInfo')" clearable>
-              <!-- <el-button slot="append" icon="el-icon-download"></el-button> -->
             </el-input>
           </el-form-item>
           <el-form-item :label="$t('label.transfer.keyProvider')" prop="keyProvider">
@@ -129,7 +193,6 @@
           <el-form-item :label="$t('label.vote.voterAccountName')" prop="voterAccountName">
             <el-input v-model="dlgData.voterAccountName" :placeholder="$t('placeholder.vote.voterAccountName')" clearable></el-input>
           </el-form-item>
-          <!-- array -->
           <el-form-item :label="$t('label.vote.producers')" prop="producers">
             <el-row>
               <el-col :span="14">
@@ -145,7 +208,7 @@
           <div style="text-align:center;"><el-button @click="generate">{{$t('label.generate')}}</el-button></div>
         </el-form>
       </el-col>
-    </el-row>
+    </el-row> -->
     <el-row v-if="currMode === 'transferRam'">
       <el-col :span="22" :offset="1">
         <div style="text-align:center;margin-bottom:20px;">
@@ -237,7 +300,7 @@
   import QRCode from 'qrcode'
   import clipboard from 'clipboard-polyfill'
   // import WebCamera from 'webcamjs'
-  import {transfer, voteProducer, sellRam, buyRam, buyRamBytes, delegatebw, unDelegatebw, isKeyValid} from '../../utils/offline'
+  import {transfer, voteProducer, sellRam, buyRam, buyRamBytes, delegatebw, unDelegatebw, isKeyValid, newAccount, updateActiveKey, updateOwnerKey, proxy, refund, createKey} from '../../utils/offline'
 
   export default {
     name: 'landing-page',
@@ -245,6 +308,7 @@
     data () {
       const obj = this
       const numberValidator = function (rule, value, callback) {
+        console.log('validator: ', rule)
         let param = 'transferQuantity'
         if (obj.currMode === 'delegate') {
           param = 'delegateQuantity'
@@ -254,7 +318,10 @@
           } else {
             param = 'bytes'
           }
+        } else {
+          param = rule.field
         }
+
         if (!value || value.length === 0) {
           callback(new Error(obj.$t(`error.${param}Required`)))
         } else if (isNaN(value)) {
@@ -270,6 +337,76 @@
       }
 
       return {
+        allModules: {
+          // vote: {
+          //   hasTab: true,
+          //   vmodel: this.voteMode,
+          // },
+          newAccount: {
+            jsonInfo: {},
+            keyProvider: {
+              isPrivateKey: true
+            },
+            creatorName: {},
+            newAccountName: {},
+            newOwnerKey: {},
+            newActiveKey: {},
+            netQuantity: {},
+            cpuQuantity: {},
+            bytes: {}
+          },
+          updatePermission: {
+            hasTab: true,
+            vmodel: 'updateActiveKey',
+            tabs: {
+              updateActiveKey: {
+                jsonInfo: {},
+                keyProvider: {
+                  isPrivateKey: true
+                },
+                accountName: {},
+                newPublicKey: {}
+              },
+              updateOwnerKey: {
+                jsonInfo: {},
+                keyProvider: {
+                  isPrivateKey: true
+                },
+                accountName: {},
+                newPublicKey: {}
+              }
+            }
+          },
+          vote: {
+            hasTab: true,
+            vmodel: 'vote',
+            tabs: {
+              vote: {
+                jsonInfo: {},
+                keyProvider: {
+                  isPrivateKey: true
+                },
+                voterAccountName: {},
+                producers: {}
+              },
+              proxy: {
+                jsonInfo: {},
+                keyProvider: {
+                  isPrivateKey: true
+                },
+                voterAccountName: {},
+                proxyAccountName: {}
+              }
+            }
+          },
+          refund: {
+            jsonInfo: {},
+            keyProvider: {
+              isPrivateKey: true
+            },
+            accountName: {}
+          }
+        },
         currLocale: null,
         currMode: 'transfer',
         ramMode: 'buyRam',
@@ -295,7 +432,13 @@
           // number
           quantity: null,
           netQuantity: null,
-          cpuQuantity: null
+          cpuQuantity: null,
+          creatorName: '',
+          newAccountName: '',
+          newOwnerKey: '',
+          newActiveKey: '',
+          privateKey: '',
+          publicKey: ''
         },
         dlgRules: {
           jsonInfo: [{
@@ -453,19 +596,73 @@
             trigger: 'blur',
             required: true,
             validator: numberValidator
+          }],
+          creatorName: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.creatorName')))
+              } else {
+                callback()
+              }
+            }
+          }],
+          newAccountName: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.newAccountName')))
+              } else {
+                callback()
+              }
+            }
+          }],
+          newOwnerKey: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.newOwnerKey')))
+              } else {
+                callback()
+              }
+            }
+          }],
+          newActiveKey: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.newActiveKey')))
+              } else {
+                callback()
+              }
+            }
+          }],
+          proxyAccountName: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.proxyAccountName')))
+              } else {
+                callback()
+              }
+            }
+          }],
+          newPublicKey: [{
+            trigger: 'blur',
+            required: true,
+            validator: function (rule, value, callback) {
+              if (!value || value.length === 0) {
+                callback(new Error(obj.$t('error.newPublicKey')))
+              } else {
+                callback()
+              }
+            }
           }]
-          // payAccountName: [{
-          //   trigger: 'blur',
-          //   required: true,
-          //   validator: function (rule, value, callback) {
-          //     console.log('***** payAccountName: ', value)
-          //     if (!value || value.length === 0) {
-          //       callback(new Error(obj.$t('error.payAccountNameRequired')))
-          //     } else {
-          //       callback()
-          //     }
-          //   }
-          // }]
         },
         signedMsg: null
       }
@@ -498,7 +695,9 @@
       onChangeLocale () {
         this.$i18n.locale = this.currLocale
         this.keyInputType = 'password'
-        this.$refs['form'].clearValidate()
+        let form = this.$refs['form']
+        if (!form.validate) form = form[0]
+        form.clearValidate()
       },
       open (link) {
         this.$electron.shell.openExternal(link)
@@ -512,41 +711,66 @@
         this.dlgData.producerNames = this.dlgData.producers.join(' ')
       },
       async generate () {
-        this.$refs['form'].validate(async (valid) => {
-          if (valid) {
-            this.$refs['form'].clearValidate()
-            const actions = {
-              'transfer': transfer,
-              'vote': voteProducer,
-              'transferRam': {
-                'buyRam': buyRam,
-                'buyRamBytes': buyRamBytes,
-                'sellRam': sellRam
-              }[this.ramMode],
-              'delegate': {
-                'delegatebw': delegatebw,
-                'unDelegatebw': unDelegatebw
-              }[this.delegateMode]
+        if (this.currMode === 'keygen') {
+          const keypair = await createKey()
+          this.dlgData.privateKey = keypair.privateKey
+          this.dlgData.publicKey = keypair.publicKey
+          clipboard.writeText(JSON.stringify(keypair))
+          this.$message({
+            type: 'success',
+            message: this.$t('message.copied')
+          })
+        } else {
+          let form = this.$refs['form']
+          if (!form.validate) form = form[0]
+          form.validate(async (valid) => {
+            if (valid) {
+              form.clearValidate()
+              const actions = {
+                'newAccount': newAccount,
+                'refund': refund,
+                'updatePermission': {
+                  'updateActiveKey': updateActiveKey,
+                  'updateOwnerKey': updateOwnerKey
+                }[this.allModules.updatePermission.vmodel],
+                'vote': {
+                  'proxy': proxy,
+                  'vote': voteProducer
+                }[this.allModules.vote.vmodel],
+                'transfer': transfer,
+                'transferRam': {
+                  'buyRam': buyRam,
+                  'buyRamBytes': buyRamBytes,
+                  'sellRam': sellRam
+                }[this.ramMode],
+                'delegate': {
+                  'delegatebw': delegatebw,
+                  'unDelegatebw': unDelegatebw
+                }[this.delegateMode]
+              }
+              this.signedMsg = null
+              this.signedMsg = await actions[this.currMode](this.dlgData)
+              console.log('++++ generate: ', actions[this.currMode], this.signedMsg)
+              this.$message({
+                type: 'success',
+                message: this.$t('message.copied')
+              })
+              clipboard.writeText(this.signedMsg)
+              QRCode.toCanvas(document.getElementById('qrcode'), this.signedMsg, { width: '188' }, function (error) {
+                if (error) console.error(error)
+              })
+            } else {
+              return false
             }
-            this.signedMsg = null
-            this.signedMsg = await actions[this.currMode](this.dlgData)
-            this.$message({
-              type: 'success',
-              message: this.$t('message.copied')
-            })
-            clipboard.writeText(this.signedMsg)
-            QRCode.toCanvas(document.getElementById('qrcode'), this.signedMsg, { width: '188' }, function (error) {
-              if (error) console.error(error)
-            })
-          } else {
-            return false
-          }
-        })
+          })
+        }
       },
       onModeSelected () {
         this.signedMsg = null
         this.keyInputType = 'password'
-        this.$refs['form'].clearValidate()
+        let form = this.$refs['form']
+        if (!form.validate) form = form[0]
+        form.clearValidate()
       }
     },
     mounted () {
