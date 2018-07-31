@@ -1,3 +1,15 @@
+- [欢迎使用柚子秘（EOSlite）](#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E6%9F%9A%E5%AD%90%E7%A7%98%EF%BC%88eoslite%EF%BC%89)
+    - [线上交易发送工具](#%E7%BA%BF%E4%B8%8A%E4%BA%A4%E6%98%93%E5%8F%91%E9%80%81%E5%B7%A5%E5%85%B7)
+    - [离线签名工具](#%E7%A6%BB%E7%BA%BF%E7%AD%BE%E5%90%8D%E5%B7%A5%E5%85%B7)
+    - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+    - [转账](#%E8%BD%AC%E8%B4%A6)
+    - [抵押功能](#%E6%8A%B5%E6%8A%BC%E5%8A%9F%E8%83%BD)
+    - [投票功能](#%E6%8A%95%E7%A5%A8%E5%8A%9F%E8%83%BD)
+        - [投票代理功能](#%E6%8A%95%E7%A5%A8%E4%BB%A3%E7%90%86%E5%8A%9F%E8%83%BD)
+    - [买卖RAM功能](#%E4%B9%B0%E5%8D%96ram%E5%8A%9F%E8%83%BD)
+    - [新帐户创建功能](#%E6%96%B0%E5%B8%90%E6%88%B7%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD)
+    - [更新权限功能与密钥生成功能](#%E6%9B%B4%E6%96%B0%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E5%8A%9F%E8%83%BD)
+
 # 欢迎使用柚子秘（EOSlite）
 
 **EOSlite**是一款由Cybex开发的EOS多功能工具，是由线上交易发送工具和离线签名工具两部分组成，主要功能包括转账、投票、抵押/解抵押、RAM买卖，具有以下特点：
@@ -31,10 +43,10 @@
 ## 转账
 
 1.  连上https://tools-eos.cybex.io/
-1.  将红框内的信息复制到柚子秘的交易报头
+2.  将红框内的信息复制到柚子秘的交易报头
    ![image.png](https://s8.postimg.cc/j68bn4ezp/image.png)
    填入复制信息
-![image.png](https://s8.postimg.cc/7wflrxhlh/image.png)
+   ![image.png](https://s8.postimg.cc/7wflrxhlh/image.png)
 1. 填入基本转账信息
 ![image.png](https://s8.postimg.cc/oy8fu4z2d/image.png)
 1. 按下生成交易，下方红框中会产生一个已签名文本
@@ -95,8 +107,6 @@
 
 柚子秘的代码皆开源于CYBEX的Github上，欢迎社区的大家与我们交流，可以进入我们CYBEX telegram 社群  
 https://t.me/CYBEXChinese
-
-
 
 
 
