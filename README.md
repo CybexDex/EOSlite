@@ -54,5 +54,49 @@
 
 ## 投票功能
 
-<font color=#FF0000> 一个帐户可投票的数量等于已抵押的带宽加CPU, 投票前须确认已抵押足够数量的EOS </font>
+<font color=red> 一个帐户可投票的数量等于已抵押的带宽加CPU, 投票前须确认已抵押足够数量的EOS </font>
+1. 与上述转账功能步骤相同，从https://tools-eos.cybex.io/ 复制信息后填入交易报头（header）
+2. 填入您想投票的BP候选人的节点帐户名，比如小编填入了EOSCYBEX, 引力区，佳能区的节点帐户名，点击生成交易
+![image.png](https://s8.postimg.cc/42qqwycx1/image.png)
+1. 将复制好的信息，贴上到https://tools-eos.cybex.io/ 发送交易即完成投票
+
+### 投票代理功能
+柚子秘提供代理功能，如果你没有时间投票可以把你的票交给你信任且有能力的代理人，代理人会替你做出最好的选择，比如eoscybexiobp
+![image.png](https://s8.postimg.cc/cma4ub0kl/image.png)
+
+## 买卖RAM功能
+不再重复叙述上述流程，在买卖RAM的板块中，分为输入EOS数量购买，输入RAM字节购买，及卖出功能
+
+-输入EOS购买，即购买与输入EOS数量等值的RAM
+![ram1.png](https://s8.postimg.cc/y8p5bsh9x/ram1.png)
+
+-输入RAM字节购买，即购买需要的内存字节（1B=1字节，1KB=1024字节，1MB=1024*1024字节）
+![ram2.png](https://s8.postimg.cc/ee33pp4n9/ram2.png)
+
+-卖出RAM，即卖给EOS系统帐户需卖出的内存字节
+![ram3.png](https://s8.postimg.cc/prpn0e7at/ram3.png)
+
+## 新帐户创建功能
+
+通过柚子秘这个小工具你可以为你的好友离线创造一个新的EOS帐户，步骤如下
+1. 与上述已提到功能相同，从https://tools-eos.cybex.io/ 里复制信息后填入交易报头（header）
+1. 填入创建者帐户及被创建帐户信息
+![image.png](https://s8.postimg.cc/prpn0jk79/image.png)
+1. 点击生成交易，将复制好的信息，贴上到https://tools-eos.cybex.io/ 发送交易，即完成新账户的创建
+
+## 更新权限功能与密钥生成功能
+
+如果担心自己的私钥长时间没有更换或是不小心被第三者看到，通过柚子秘你可以随时更换你的owner key及active key，定期的更新密钥是保护自己资产安全的好习惯，步骤如下
+1. 到“密钥生成”栏下，产生新的公私钥对
+1. 在“更新权限”栏下，与上述已提到功能相同，从https://tools-eos.cybex.io/ 里复制信息后填入交易报头（header）
+![active_key.png](https://s8.postimg.cc/nbntmm23p/active_key.png)
+1. 填入原有帐户的私钥和帐户名，最后填入要更新的公钥
+1. 点击生成交易，将复制好的信息，贴上到https://tools-eos.cybex.io/ 发送交易，即完成更新自己对应的公私钥对
+
+柚子秘的代码皆开源于CYBEX的Github上，欢迎社区的大家与我们交流，可以进入我们CYBEX telegram 社群  
+https://t.me/CYBEXChinese
+
+
+
+
 
