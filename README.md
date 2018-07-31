@@ -54,7 +54,7 @@
 
 ## 投票功能
 
-<font color=red> 一个帐户可投票的数量等于已抵押的带宽加CPU, 投票前须确认已抵押足够数量的EOS </font>
+<span style="color: red;"> 一个帐户可投票的数量等于已抵押的带宽加CPU, 投票前须确认已抵押足够数量的EOS </span>
 1. 与上述转账功能步骤相同，从https://tools-eos.cybex.io/ 复制信息后填入交易报头（header）
 2. 填入您想投票的BP候选人的节点帐户名，比如小编填入了EOSCYBEX, 引力区，佳能区的节点帐户名，点击生成交易
 ![image.png](https://s8.postimg.cc/42qqwycx1/image.png)
