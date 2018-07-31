@@ -25,3 +25,34 @@
 - 将交易报头粘贴在离线电脑EOSlite客户端中，根据自己需要选择需要进行的操作，输入交易内容和私钥
 - 点击生成交易，将已签名的交易体复制，粘贴在联网电脑 https://tools-eos.cybex.io/ 中的发送交易框
 - 点击发送交易，交易发布成功会生成交易哈希，点击即跳转到eosflare区块链浏览器查看交易状态
+
+以下会依照功能的常用程度，依序介绍转账、抵押、投票，新帐户创建，更新权限，密钥，购买RAM等功能
+
+## 转账
+
+1.  连上https://tools-eos.cybex.io/
+1.  将红框内的信息复制到柚子秘的交易报头
+   ![image.png](https://s8.postimg.cc/j68bn4ezp/image.png)
+   填入复制信息
+![image.png](https://s8.postimg.cc/7wflrxhlh/image.png)
+1. 填入基本转账信息
+![image.png](https://s8.postimg.cc/oy8fu4z2d/image.png)
+1. 按下生成交易，下方红框中会产生一个已签名文本
+![image.png](https://s8.postimg.cc/5t56ks539/image.png)
+1.  柚子秘会帮你复制到剪贴板，只需要再回到https://tools-eos.cybex.io/ ，在框框中粘贴，按下发送交易即完成
+![image.png](https://s8.postimg.cc/lfwfxq3b9/image.png)
+发送交易成功后，下方会出现交易ID，点击后跳转到EOS浏览器
+1. 在区块浏览器可以看到自己的转账信息与状态，CYBEX官方为您挑选我们认为最好用的EOS区块链浏览器eosflare
+![image.png](https://s8.postimg.cc/79gp2nd2d/image.png)
+
+## 抵押功能
+
+1. 与上述转账功能步骤相同，从https://tools-eos.cybex.io/ 复制信息后填入交易报头（header）
+1. 填入所有相关信息，假设你的帐户余额有100个EOS，那么你可以抵押的网路带宽（NET) 和CPU的总量最多为100个EOS。
+![image.png](https://s8.postimg.cc/809f87a85/image.png)
+1. 生成交易后，复制信息贴到https://tools-eos.cybex.io/ ，发送交易即可
+
+## 投票功能
+
+<font color=#FF0000> 一个帐户可投票的数量等于已抵押的带宽加CPU, 投票前须确认已抵押足够数量的EOS </font>
+
