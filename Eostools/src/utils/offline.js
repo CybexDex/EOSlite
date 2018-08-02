@@ -3,7 +3,7 @@ import config from './config'
 import BigNumber from 'bignumber.js'
 const httpEndpoint = null
 // const chainId = process.env.NODE_ENV !== 'production' ? config.node.Eosio.TestNet.chainId : config.node.Eosio.MainNet.chainId
-const chainId = config.node.Eosio.TestNet.chainId
+const chainId = config.node.Eosio.MainNet.chainId
 const coin = 'EOS'
 const rate = 1e4
 

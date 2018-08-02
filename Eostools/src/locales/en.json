@@ -9,13 +9,13 @@
       "buyRam": "Buy RAM (EOS)",
       "buyRamBytes": "Buy RAM (Bytes)",
       "sellRam": "Sell RAM",
-      "newAccount": "Create account",
+      "newAccount": "Create Account",
       "refund": "Refund",
       "proxy": "Proxy",
       "updateOwnerKey": "Update Owner Key",
       "updateActiveKey": "Update Active Key",
       "updatePermission": "Update Authority",
-      "keygen": "Keygen"
+      "keygen": "Generate Key"
     },
     "button": {
       "add": "add"
@@ -27,6 +27,11 @@
       "generate": "generate transaction",
       "notification": "Please stay offline for the security of your private key",
       "switchkey": "Switch to show private key",
+      "byteCalculate": {
+        "byte": "Bytes",
+        "kb": "KiloBytes",
+        "mb": "MegaBytes"
+      },
       "transfer": {
         "jsonInfo": "Transaction Header:",
         "keyProvider": "Private Key:",

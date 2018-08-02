@@ -9,11 +9,11 @@
     "buyRam": "购买RAM (EOS)",
     "buyRamBytes": "购买RAM (字节)",
     "sellRam": "出售RAM",
-    "newAccount": "新账户",
+    "newAccount": "创建账户",
     "refund": "赎回",
     "proxy": "代理",
-    "updateOwnerKey": "更新Owner公钥",
-    "updateActiveKey": "更新Active公钥",
+    "updateOwnerKey": "更新Owner权限公钥",
+    "updateActiveKey": "更新Active权限公钥",
     "updatePermission": "更新权限",
     "keygen": "秘钥生成"
   },
@@ -27,6 +27,11 @@
     "generate": "生成交易",
     "notification": "为保证您的私钥安全，请在离线状态下进行操作",
     "switchkey": "切换显示明文",
+    "byteCalculate": {
+      "byte": "字节",
+      "kb": "千字节",
+      "mb": "兆字节"
+    },
     "transfer": {
       "jsonInfo": "交易报头：",
       "keyProvider": "转出账户私钥：",
@@ -82,8 +87,8 @@
       "keyProvider": "私钥：",
       "creatorName": "账户名：" ,
       "newAccountName": "新账户名：",
-      "newOwnerKey": "Owner公钥：",
-      "newActiveKey": "Active公钥：",
+      "newOwnerKey": "Owner权限公钥：",
+      "newActiveKey": "Active权限公钥：",
       "netQuantity": "NET金额：",
       "cpuQuantity": "CPU金额：",
       "bytes": "字节数："
@@ -174,8 +179,8 @@
       "keyProvider": "请输入创建者的私钥",
       "creatorName": "请输入创建者的账户名" ,
       "newAccountName": "请输入新账户的账户名",
-      "newOwnerKey": "请输入新账户Owner的公钥",
-      "newActiveKey": "请输入新账户Active的公钥",
+      "newOwnerKey": "请输入新账户Owner权限的公钥",
+      "newActiveKey": "请输入新账户Active权限的公钥",
       "netQuantity": "请输入为新账户换取网络带宽而抵押的EOS数量",
       "cpuQuantity": "请输入为新账户换取CPU带宽而抵押的EOS数量",
       "bytes": "请输入为新账户购买RAM的EOS数量"
@@ -193,15 +198,15 @@
     },
     "updateActiveKey": {
       "jsonInfo": "请输入联网获取的交易报头",
-      "keyProvider": "请输入账户原有的Active私钥",
-      "accountName": "请输入更新Active公钥的账户名",
-      "newPublicKey": "请输入账户新的Active公钥"
+      "keyProvider": "请输入账户原有的Active权限私钥",
+      "accountName": "请输入更新Active权限公钥的账户名",
+      "newPublicKey": "请输入账户新的Active权限公钥"
     },
     "updateOwnerKey": {
       "jsonInfo": "请输入联网获取的交易报头",
-      "keyProvider": "请输入账户原有的Owner私钥",
-      "accountName": "请输入更新Owner公钥的账户名",
-      "newPublicKey": "请输入账户新的Owner公钥"
+      "keyProvider": "请输入账户原有的Owner权限私钥",
+      "accountName": "请输入更新Owner权限公钥的账户名",
+      "newPublicKey": "请输入账户新的Owner权限公钥"
     }
   },
   "error": {
@@ -231,8 +236,8 @@
     "producersRequired": "请输入投票节点",
     "creatorName": "请输入创建者的账户名" ,
     "newAccountName": "请输入新账户的账户名",
-    "newOwnerKey": "请输入新账户Owner的公钥",
-    "newActiveKey": "请输入新账户Active的公钥",
+    "newOwnerKey": "请输入新账户Owner权限的公钥",
+    "newActiveKey": "请输入新账户Active权限的公钥",
     "proxyAccountName": "请输入代理投票的账户名",
     "newPublicKey": "请输入新的公钥",
     "netQuantityRequired": "请输入金额",

@@ -21,11 +21,8 @@
       <el-tab-pane label="" disabled></el-tab-pane>
       <el-tab-pane :label="$t('title.newAccount')" name="newAccount"></el-tab-pane>
       <el-tab-pane :label="$t('title.transfer')" name="transfer"></el-tab-pane>
-      <!-- <el-tab-pane :label="$t('title.updateOwnerKey')" name="updateOwnerKey"></el-tab-pane>
-      <el-tab-pane :label="$t('title.updateActiveKey')" name="updateActiveKey"></el-tab-pane> -->
       <el-tab-pane :label="$t('title.updatePermission')" name="updatePermission"></el-tab-pane>
       <el-tab-pane :label="$t('title.refund')" name="refund"></el-tab-pane>
-      <!-- <el-tab-pane :label="$t('title.proxy')" name="proxy"></el-tab-pane> -->
       <el-tab-pane :label="$t('title.delegate')" name="delegate"></el-tab-pane>
       <el-tab-pane :label="$t('title.vote')" name="vote"></el-tab-pane>
       <el-tab-pane :label="$t('title.transferRam')" name="transferRam"></el-tab-pane>
@@ -53,8 +50,8 @@
                   </el-col>
                 </el-row>
               </el-form-item>
-              <el-form-item v-else :type="val.isPrivateKey ? 'keyInputType' : ''" :label="$t(`label.${subname}.${attr}`)" :prop="attr">
-                <el-input v-model="dlgData[attr]" :placeholder="$t(`placeholder.${subname}.${attr}`)" clearable>
+              <el-form-item v-else :label="$t(`label.${subname}.${attr}`)" :prop="attr">
+                <el-input v-model="dlgData[attr]" :type="val.isPrivateKey ? keyInputType : ''" :placeholder="$t(`placeholder.${subname}.${attr}`)" clearable>
                   <el-button v-if="val.isPrivateKey" @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
                 </el-input>
               </el-form-item>
@@ -63,8 +60,8 @@
           </el-form>
         </div>
         <el-form v-else ref="form" :model="dlgData" :rules="dlgRules" :label-width="'150px'" @keyup.native="onEnterClicked">
-          <el-form-item v-for="(val, attr, idx) in tmodule" :key="index+idx" :type="val.isPrivateKey ? 'keyInputType' : ''" :label="$t(`label.${tname}.${attr}`)" :prop="attr">
-            <el-input v-model="dlgData[attr]" :placeholder="$t(`placeholder.${tname}.${attr}`)" clearable>
+          <el-form-item v-for="(val, attr, idx) in tmodule" :key="index+idx" :label="$t(`label.${tname}.${attr}`)" :prop="attr">
+            <el-input v-model="dlgData[attr]" :type="val.isPrivateKey ? keyInputType : ''" :placeholder="$t(`placeholder.${tname}.${attr}`)" clearable>
               <el-button v-if="val.isPrivateKey" @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
             </el-input>
           </el-form-item>
@@ -85,7 +82,7 @@
               <!-- <el-button slot="append" @click="copyKey" icon="el-icon-document"></el-button> -->
             </el-input>
           </el-form-item>
-          <div style="text-align:center;"><el-button @click="generate">{{$t('label.keygenbtn')}}</el-button></div>
+          <div style="text-align:center;margin-top:35px;"><el-button @click="generate">{{$t('label.keygenbtn')}}</el-button></div>
         </el-form>
       </el-col>
     </el-row>
@@ -158,7 +155,7 @@
             </el-input>
           </el-form-item>
           <el-form-item :label="$t('label.unDelegatebw.keyProvider')" prop="keyProvider">
-            <el-input v-model="dlgData.keyProvider" :placeholder="$t('placeholder.unDelegatebw.keyProvider')" clearable>
+            <el-input v-model="dlgData.keyProvider" :placeholder="$t('placeholder.unDelegatebw.keyProvider')" :type="keyInputType" clearable>
               <el-button @click="onSwitchKey" slot="append" icon="el-icon-view"></el-button>
             </el-input>
           </el-form-item>
@@ -211,7 +208,40 @@
     </el-row> -->
     <el-row v-if="currMode === 'transferRam'">
       <el-col :span="22" :offset="1">
-        <div style="text-align:center;margin-bottom:20px;">
+        <el-row style="font-size:12px;">
+          <el-col :span="2"><p style="float:right;line-height:32px;">换算：</p></el-col>
+          <el-col :span="7">
+            <el-row>
+              <el-col :span="18">
+                <el-input v-model="byteCalculate.byte" clearable @change="onCalChanged('byte')"></el-input>
+              </el-col>
+              <el-col :span="6">
+                <p style="margin-left:5px;line-height:32px;">{{$t('label.byteCalculate.byte')}}&nbsp;=</p>
+              </el-col>
+            </el-row>
+          </el-col>
+          <el-col :span="7">
+            <el-row>
+              <el-col :span="18">
+                <el-input v-model="byteCalculate.kb" clearable @change="onCalChanged('kb')"></el-input>
+              </el-col>
+              <el-col :span="6">
+                <p style="margin-left:5px;line-height:32px;">{{$t('label.byteCalculate.kb')}}&nbsp;=</p>
+              </el-col>
+            </el-row>
+          </el-col>
+          <el-col :span="7">
+            <el-row>
+              <el-col :span="18">
+                <el-input v-model="byteCalculate.mb" clearable @change="onCalChanged('mb')"></el-input>
+              </el-col>
+              <el-col :span="6">
+                <p style="margin-left:5px;line-height:32px;">{{$t('label.byteCalculate.mb')}}</p>
+              </el-col>
+            </el-row>
+          </el-col>
+        </el-row>
+        <div style="text-align:center;margin-bottom:20px;margin-top:7px;">
           <el-radio-group v-model="ramMode" @change="onModeSelected">
             <el-radio-button label="buyRam">{{$t('title.buyRam')}}</el-radio-button>
             <el-radio-button label="buyRamBytes">{{$t('title.buyRamBytes')}}</el-radio-button>
@@ -337,6 +367,11 @@
       }
 
       return {
+        byteCalculate: {
+          byte: 0,
+          mb: 0,
+          kb: 0
+        },
         allModules: {
           // vote: {
           //   hasTab: true,
@@ -420,9 +455,9 @@
           transferQuantity: '',
           voterAccountName: '',
           singleProducerName: '',
-          producerNames: '',
+          producerNames: 'eoscybexiobp',
           // Array
-          producers: [],
+          producers: ['eoscybexiobp'],
           accountName: '',
           // number
           bytes: null,
@@ -681,6 +716,18 @@
       }
     },
     methods: {
+      onCalChanged (keyName) {
+        if (keyName === 'byte') {
+          this.byteCalculate.kb = this.byteCalculate.byte / 1024
+          this.byteCalculate.mb = this.byteCalculate.byte / 1024 / 1024
+        } else if (keyName === 'kb') {
+          this.byteCalculate.byte = this.byteCalculate.kb * 1024
+          this.byteCalculate.mb = this.byteCalculate.kb / 1024
+        } else if (keyName === 'mb') {
+          this.byteCalculate.byte = this.byteCalculate.mb * 1024 * 1024
+          this.byteCalculate.kb = this.byteCalculate.mb * 1024
+        }
+      },
       scanQRCode () {
 
       },
@@ -715,7 +762,7 @@
           const keypair = await createKey()
           this.dlgData.privateKey = keypair.privateKey
           this.dlgData.publicKey = keypair.publicKey
-          clipboard.writeText(JSON.stringify(keypair))
+          clipboard.writeText(JSON.stringify(keypair).replace('","', '\n').replace('{"', '').replace('"}', '').replace('":"', ':\n').replace('":"', ':\n'))
           this.$message({
             type: 'success',
             message: this.$t('message.copied')
@@ -771,6 +818,15 @@
         let form = this.$refs['form']
         if (!form.validate) form = form[0]
         form.clearValidate()
+        if (this.currMode === 'newAccount') {
+          this.dlgData.bytes = '3500'
+          this.dlgData.netQuantity = '0.01'
+          this.dlgData.cpuQuantity = '0.01'
+        } else {
+          this.dlgData.bytes = null
+          this.dlgData.netQuantity = null
+          this.dlgData.cpuQuantity = null
+        }
       }
     },
     mounted () {
