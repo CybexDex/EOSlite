@@ -88,10 +88,12 @@ You can create a new EOS account for your friend offline by EOSlite:
 
 If you are worried that you are giving away your private keys to anyone else unconsciously or leaving private keys unchanged for long time, you can update your owner key and active key at any time you want. Update private keys regularly, which is a good way to shield your wealth. 
 1. Generate new public/private keys under the column of “Generate Private Keys”
-1. 2.	Copy the information from https://tools-eos.cybex.io/ and paste into the field of transaction header under the column of “Update Permissions”
+1. Copy the information from https://tools-eos.cybex.io/ and paste into the field of transaction header under the column of “Update Permissions”
 ![update_and_renew.png](https://s8.postimg.cc/egha9k6yt/update_and_renew.png)
 1. Put in the private key and account name of the original account, then put in the updated public key.
 1. Click to generate transaction and copy the information to https://tools-eos.cybex.io/ to send out the transaction, then the process of updating your public/private keys is finished.
+
+
 
 The code of EOSlite is open to public on Github of Cybex, join our telegram community to exchange views:
 https://t.me/CYBEXEnglish
