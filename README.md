@@ -1,26 +1,15 @@
-- [欢迎使用柚子秘（EOSlite）](#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E6%9F%9A%E5%AD%90%E7%A7%98%EF%BC%88eoslite%EF%BC%89)
-    - [线上交易发送工具](#%E7%BA%BF%E4%B8%8A%E4%BA%A4%E6%98%93%E5%8F%91%E9%80%81%E5%B7%A5%E5%85%B7)
-    - [离线签名工具](#%E7%A6%BB%E7%BA%BF%E7%AD%BE%E5%90%8D%E5%B7%A5%E5%85%B7)
-    - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
-    - [转账](#%E8%BD%AC%E8%B4%A6)
-    - [抵押功能](#%E6%8A%B5%E6%8A%BC%E5%8A%9F%E8%83%BD)
-    - [投票功能](#%E6%8A%95%E7%A5%A8%E5%8A%9F%E8%83%BD)
-        - [投票代理功能](#%E6%8A%95%E7%A5%A8%E4%BB%A3%E7%90%86%E5%8A%9F%E8%83%BD)
-    - [买卖RAM功能](#%E4%B9%B0%E5%8D%96ram%E5%8A%9F%E8%83%BD)
-    - [新帐户创建功能](#%E6%96%B0%E5%B8%90%E6%88%B7%E5%88%9B%E5%BB%BA%E5%8A%9F%E8%83%BD)
-    - [更新权限功能与密钥生成功能](#%E6%9B%B4%E6%96%B0%E6%9D%83%E9%99%90%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E5%8A%9F%E8%83%BD)
 
-# 欢迎使用柚子秘（EOSlite）
+# Welcome to use EOSlite
 
-**EOSlite**是一款由Cybex开发的EOS多功能工具，是由线上交易发送工具和离线签名工具两部分组成，主要功能包括转账、投票、抵押/解抵押、RAM买卖，具有以下特点：
+**EOSlite** is a multi-functional tool developed by Cybex, consisting of online transfer tool and offline signature tool, including transfer, account creation, updating permission, voting, stake / unstake EOS and selling / purchasing of RAM. The major features of EOSlite are:
  
-- **完全开源** ：全部基于开源技术开发，所有代码全部开源
-- **使用方便** ：界面简洁布局清晰，使用流程简单
-- **安全便捷** ：签名工具支持离线环境使用，并在保证私钥安全的前提下支持二维码等方式方便导入导出
+- **Completely open-source** ：Fully built upon open-source technology and all codes are open to the public 
+- **Ease of use** ：Simplified UI and easy to use
+- **Safe and convenient** ：Offer signature tool that supports offline usage and QR code scanning to easily import and export private keys while ensuring security 
 
 -------------------
 
-## 线上交易发送工具
+## Online Transfer Broadcast Tool
 
 访问域名 https://tools-eos.cybex.io/ 即可在开启的页面进行交易发送，未来还将提供微信小程序版本
 
@@ -38,7 +27,7 @@
 - 点击生成交易，将已签名的交易体复制，粘贴在联网电脑 https://tools-eos.cybex.io/ 中的发送交易框
 - 点击发送交易，交易发布成功会生成交易哈希，点击即跳转到eosflare区块链浏览器查看交易状态
 
-以下会依照功能的常用程度，依序介绍转账、抵押、投票，新帐户创建，更新权限，密钥，购买RAM等功能
+The functions below are introduced at an order of usage frequency, including transfer, stake, vote and purchase RAM.
 
 ## 转账
 
