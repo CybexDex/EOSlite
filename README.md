@@ -32,24 +32,24 @@ The detailed process of all functions are introduced below at an order of usage 
 
 1. Connect to https://tools-eos.cybex.io/
 2. Copy the information in the red box to the field of ‘Transaction Header’
-   [![transfer1.png](https://s33.postimg.cc/5j67bkmfz/transfer1.png)
+   ![transfer1.png](https://s33.postimg.cc/5j67bkmfz/transfer1.png)
    Copy the transaction header
-   [![transfer2.png](https://s33.postimg.cc/up75iqntr/transfer2.png)
+   ![transfer2.png](https://s33.postimg.cc/up75iqntr/transfer2.png)
 1. Put in the basic information of the transaction
-[![transfer3.png](https://s8.postimg.cc/mjfgko9hx/transfer3.png)
+![transfer3.png](https://s8.postimg.cc/mjfgko9hx/transfer3.png)
 1. Click the button of ‘Generate Transaction’ and it will generate the signed text as shown in the red box below
-[![transfer4.png](https://s8.postimg.cc/ruud5eqfp/transfer4.png)
+![transfer4.png](https://s8.postimg.cc/ruud5eqfp/transfer4.png)
 1. EOSlite will copy this text and you just go back to https://tools-eos.cybex.io/, paste the text and click ‘Send Transaction’ to finish the process
-[![transfer5.png](https://s8.postimg.cc/kev3jpi6t/transfer5.png)
+![transfer5.png](https://s8.postimg.cc/kev3jpi6t/transfer5.png)
 Once the transaction is sent, there will be a transaction ID prompt below and you can click to go back to EOS browser.
 1. You can also check the transfer information and status at EOS blockchain browser like eosflare.io
-[![transfer6.png](https://s8.postimg.cc/bwlnfdr3p/transfer6.png)
+![transfer6.png](https://s8.postimg.cc/bwlnfdr3p/transfer6.png)
 
 ## Stake 
 
 1. Connect to https://tools-eos.cybex.io/ and fill out the field of ‘Transaction Header’
 1.	Put in all information. When you have 100 EOS in your account, then you can stake at most 100 EOS for NET and CPU.
-[![delegate.png](https://s8.postimg.cc/8pr3vv1jp/delegate.png)
+![delegate.png](https://s8.postimg.cc/8pr3vv1jp/delegate.png)
 1. Once the transaction generated, copy the information to https://tools-eos.cybex.io/ to send the transaction.
 
 ## Vote
@@ -57,31 +57,31 @@ Once the transaction is sent, there will be a transaction ID prompt below and yo
 The number of available votes equals that of staked bandwidth plus CPU, please check you have staked enough EOS before voting.
 1. Connect to https://tools-eos.cybex.io/ and fill out the field of ‘Transaction Header’
 2. Put in the account name of the BP candidate node that you want to select, such as EOSCYBEX, EOS Gravity, EOS Cannon, then click to generate transaction
-[![vote.png](https://s8.postimg.cc/68fcorx4l/vote.png)
+![vote.png](https://s8.postimg.cc/68fcorx4l/vote.png)
 1. Copy the information to https://tools-eos.cybex.io/ to finish voting.
 
 ### Proxy Voting 
 EOSlite supports proxy voting. You can delegate your votes to the trusted and capable agent to make the best decision for you, such as eoscybexiobp.
-[![vote_proxy.png](https://s8.postimg.cc/g70bavw5x/vote_proxy.png)
+![vote_proxy.png](https://s8.postimg.cc/g70bavw5x/vote_proxy.png)
 
 ## Purchase RAM
 You can choose to use EOS balance or RAM bytes to buy and sell RAM.
 
 -If you put in the number of EOS, you can buy the equivalent number of RAM.
-[![buy_ram.png](https://s8.postimg.cc/5k6i5qiyd/buy_ram.png)
+![buy_ram.png](https://s8.postimg.cc/5k6i5qiyd/buy_ram.png)
 
 -If you put in RAM bytes, you can buy the bytes you need (1KB=1024B，1MB=1024*1024B).
-[![buy_ram2.png](https://s8.postimg.cc/5k6i5t3jp/buy_ram2.png)
+![buy_ram2.png](https://s8.postimg.cc/5k6i5t3jp/buy_ram2.png)
 
 -If you want to sell RAM, you are selling bytes to EOS system account. 
-[![sell_ram.png](https://s8.postimg.cc/hyta66ks5/sell_ram.png)
+![sell_ram.png](https://s8.postimg.cc/hyta66ks5/sell_ram.png)
 
 ## Create new account
 
 You can create a new EOS account for your friend offline by EOSlite:
 1. Copy the information from https://tools-eos.cybex.io/ and paste into the field of transaction header.
 1. Put in the information of your account and the account to be created.
-[![create_account.png](https://s8.postimg.cc/g8a94dav9/create_account.png)
+![create_account.png](https://s8.postimg.cc/g8a94dav9/create_account.png)
 1. Click to generate transaction and copy the information to https://tools-eos.cybex.io/ to send out the transaction, then the process of creating new account is finished.
 
 ## Update Permissions and Generate Private Keys
@@ -89,7 +89,7 @@ You can create a new EOS account for your friend offline by EOSlite:
 If you are worried that you are giving away your private keys to anyone else unconsciously or leaving private keys unchanged for long time, you can update your owner key and active key at any time you want. Update private keys regularly, which is a good way to shield your wealth. 
 1. Generate new public/private keys under the column of “Generate Private Keys”
 1. 2.	Copy the information from https://tools-eos.cybex.io/ and paste into the field of transaction header under the column of “Update Permissions”
-[![update_and_renew.png](https://s8.postimg.cc/egha9k6yt/update_and_renew.png)
+![update_and_renew.png](https://s8.postimg.cc/egha9k6yt/update_and_renew.png)
 1. Put in the private key and account name of the original account, then put in the updated public key.
 1. Click to generate transaction and copy the information to https://tools-eos.cybex.io/ to send out the transaction, then the process of updating your public/private keys is finished.
 
