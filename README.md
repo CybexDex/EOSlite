@@ -1,3 +1,15 @@
+中文阅读者请看这边 [Readme.CN](https://github.com/NebulaCybexDEX/EOSlite/blob/master/README-CN.md)
+- Welcome to use EOSlite 
+   - [Online Transfer Broadcast Tool](#online-transfer-broadcast-tool)
+   - [Offline Signature Tool](#offline-signature-tool)
+   - [Use Guidance](#use-guidance)
+   - [Transfer](#transfer)
+   - [Stake](#stake)
+   - [Vote](#vote)
+     - [Proxy Voting](#proxy-voting)
+   - [Purchase RAM](#purchase-ram)
+   - [Create new account](#create-new-account)
+   - [Update Permissions and Generate Private Keys](#update-permissions-and-generate-private-keys)
 
 # Welcome to use EOSlite
 
